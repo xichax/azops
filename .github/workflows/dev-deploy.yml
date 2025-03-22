@@ -1,0 +1,16 @@
+name: Deploy to Dev
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and Push Image
+        run: ./gradlew jib
+      - name: Deploy to Dev
+        run: |
+          helm upgrade --install dev-release helm/ --namespace dev

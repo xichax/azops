@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-mongo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springboot-mongo-app
+  template:
+    metadata:
+      labels:
+        app: springboot-mongo-app
+    spec:
+      containers:
+        - name: app
+          image: "{{ .Values.image.repository }}"
+          env:
+            - name: COLLECTION_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: COLLECTION_NAME

@@ -1,0 +1,14 @@
+name: Deploy to Stage
+on:
+  push:
+    branches:
+      - stage
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy to Stage
+        run: |
+          helm upgrade --install stage-release helm/ --namespace stage --set app.collectionName=stage_users

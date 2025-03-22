@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: springboot-mongo-app
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/mydatabase
+
+app:
+  collection-name: local_users
