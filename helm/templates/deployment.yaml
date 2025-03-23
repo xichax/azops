@@ -21,3 +21,5 @@ spec:
                 configMapKeyRef:
                   name: app-config
                   key: COLLECTION_NAME
+            - name: SPRING_DATA_MONGODB_URI
+              value: "{{ .Values.env.SPRING_DATA_MONGODB_URI }}"
