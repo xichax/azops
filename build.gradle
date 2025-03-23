@@ -30,6 +30,6 @@ tasks.named('test') {
 
 jib {
 	to {
-		image = "your-dockerhub-username/springboot-mongo-app:latest"
+		image = "tnkas/springboot-mongo-app:latest"
 	}
 }

@@ -1,5 +1,7 @@
 image:
-  repository: your-dockerhub-username/springboot-mongo-app:latest
+  repository: tnkas/springboot-mongo-app:latest
 
 app:
   collectionName: dev_users
+env:
+  SPRING_DATA_MONGODB_URI: "mongodb://dev-mongo-mongodb:27017/mydatabase"
