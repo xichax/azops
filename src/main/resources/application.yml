@@ -3,7 +3,7 @@ spring:
     name: springboot-mongo-app
   data:
     mongodb:
-      uri: mongodb://localhost:27017/mydatabase
+      uri: ${MONGO_URI}
 
 app:
   collection-name: local_users
